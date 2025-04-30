@@ -49,6 +49,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.mycontact.AppState
 
 import com.example.mycontact.ContactViewModel
 import com.example.mycontact.R
@@ -59,6 +60,7 @@ import com.example.mycontact.presentation.navigation.Routes
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreenUI(
+    state: AppState,
     modifier: Modifier,
     viewModel: ContactViewModel= hiltViewModel(),
     navController: NavController
@@ -128,9 +130,7 @@ fun HomeScreenUI(
             }
         }
     ) { innerPadding ->
-        Box(
-
-        ) {
+        Box{
             LazyColumn(
                 modifier = modifier.fillMaxSize().padding(innerPadding)
             ) {
@@ -189,7 +189,7 @@ fun ContactItemUI(contact: Contact, viewModel: ContactViewModel, navController: 
                 .padding(10.dp),
             verticalAlignment = Alignment.CenterVertically
         ){
-            Column() {
+            Column {
                 Text(text = contact.name, fontSize = 18.sp,fontFamily = FontFamily.Serif)
                 Text(text = contact.phoneNumber,fontSize = 14.sp,fontFamily = FontFamily.Serif)
 //                Text(text = contact.email,fontSize = 16.sp,fontFamily = FontFamily.Serif)
