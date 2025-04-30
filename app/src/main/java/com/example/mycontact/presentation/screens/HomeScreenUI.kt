@@ -65,7 +65,7 @@ fun HomeScreenUI(
     viewModel: ContactViewModel= hiltViewModel(),
     navController: NavController
 ){
-    val stateby by viewModel.state.collectAsState()
+
     var showMenu by remember { mutableStateOf(false) }
     Scaffold(
             topBar = {
