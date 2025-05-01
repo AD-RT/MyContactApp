@@ -139,6 +139,7 @@ fun HomeScreenUI(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
+                .padding(bottom = 35.dp)
         ) {
             // add search bar
             HomeSearchBar(viewModel = viewModel)
@@ -173,6 +174,7 @@ fun HomeSearchBar(viewModel: ContactViewModel) {
         value = viewState.searchQuery,
         onValueChange = { viewModel.updateSearchQuery(it) },
         placeholder = { Text("Search Contacts") },
+        label = { Text("Search") },
         leadingIcon = { Icon(Icons.Default.Search, contentDescription = "Search") },
         trailingIcon = {
             if(viewState.searchQuery.isNotEmpty())
