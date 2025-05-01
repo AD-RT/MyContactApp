@@ -26,6 +26,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 
@@ -61,7 +62,7 @@ fun AddContactUI(modifier: Modifier = Modifier,
                 ),
                 navigationIcon = {
                     IconButton(onClick = { navController.navigate(Routes.HomeScreen)}) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "null")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "null")
                     }
                 },
                 title = {
@@ -124,6 +125,7 @@ fun DetailsContactUI( placeholder: String, valueChange: (String) -> Unit, label:
             KeyboardOptions(keyboardType = KeyboardType.Email)
         }else{
             KeyboardOptions(keyboardType = KeyboardType.Text)
-        }
+        },
+        singleLine = true
     )
 }

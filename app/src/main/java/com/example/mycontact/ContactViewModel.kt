@@ -19,23 +19,34 @@ class ContactViewModel @Inject constructor(private val repository: Repository): 
 
     private var _state = MutableStateFlow<AppState>(AppState())
     private val _sortOrder = MutableStateFlow(SortOrder.ASCENDING)
+
     val AllContacts = repository.getAllContacts().stateIn(
         viewModelScope,
         started = SharingStarted.WhileSubscribed(),
         initialValue = emptyList<Contact>()
     )
+
     val state = combine(_state, AllContacts, _sortOrder) {
         state, contacts, sortOrder ->
         val sortedContacts = when (sortOrder) {
             SortOrder.ASCENDING -> contacts.sortedBy { it.name }
             SortOrder.DESCENDING -> contacts.sortedByDescending { it.name }
         }
-        state.copy(AllContacts = sortedContacts)
+
+        val filteredContact = sortedContacts.filter {
+            it.name.contains(state.searchQuery, ignoreCase = true) ||
+                    it.phoneNumber.contains(state.searchQuery, ignoreCase = true) ||
+                    it.email.contains(state.searchQuery, ignoreCase = true)
+        }
+
+        state.copy(AllContacts = filteredContact)
+
     }.stateIn(
         viewModelScope,
         started = SharingStarted.WhileSubscribed(5000), // delay of 5 seconds after the last emission of the flow will stop collecting the flow and release the resources allocated to it
         initialValue = AppState()
     )
+
     // Function to toggle the sorting order
     fun toggleSortOrder(newSortOrder : SortOrder) {
         _sortOrder.value = if (_sortOrder.value == newSortOrder) {
@@ -44,6 +55,12 @@ class ContactViewModel @Inject constructor(private val repository: Repository): 
             newSortOrder
         }
     }
+
+    // Function to update the search query
+    fun updateSearchQuery(query: String) {
+        _state.value = _state.value.copy(searchQuery = query)
+    }
+
     fun insertContact(){
         val contact = Contact(
             id = state.value.id.value,
@@ -89,7 +106,8 @@ data class AppState(                                       // this class is used
     val id : MutableState<Int> = mutableStateOf(0),
     var name : MutableState<String> = mutableStateOf(""),
     var phoneNumber : MutableState<String> = mutableStateOf(""),
-    var email : MutableState<String> = mutableStateOf("")
+    var email : MutableState<String> = mutableStateOf(""),
+    var searchQuery : String = ""
 
 )
 

@@ -17,7 +17,7 @@ import com.example.mycontact.presentation.screens.profile
 
 @Composable
 fun AppNavigation(modifier: Modifier= Modifier, viewModel: ContactViewModel = hiltViewModel()){
-    var navController = rememberNavController()
+    val navController = rememberNavController()
     val state = viewModel.state.collectAsState()
 
     NavHost(
@@ -25,7 +25,7 @@ fun AppNavigation(modifier: Modifier= Modifier, viewModel: ContactViewModel = hi
         startDestination = Routes.HomeScreen
     ) {
         composable<Routes.HomeScreen> {
-           HomeScreenUI(state = state.value, viewModel = viewModel, modifier = modifier, navController = navController)
+           HomeScreenUI( viewModel = viewModel, modifier = modifier, navController = navController)
         }
         composable<Routes.AddContactUI> {
             AddContactUI(state = state.value, OnEvent = { viewModel.insertContact() }, navController = navController)
