@@ -198,7 +198,7 @@ fun ContactItemUI(contact: Contact, viewModel: ContactViewModel, navController: 
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 15.dp)
-            .combinedClickable (
+            .combinedClickable(
                 onClick = {
                     viewModel.state.value.id.value = contact.id
                     viewModel.state.value.name.value = contact.name
