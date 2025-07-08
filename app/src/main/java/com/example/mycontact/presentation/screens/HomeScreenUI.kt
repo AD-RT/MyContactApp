@@ -94,6 +94,8 @@ fun HomeScreenUI(
                                 fontSize = 24.sp,
                                 fontFamily = FontFamily.Serif,
                                 fontWeight = FontWeight.Medium,
+                                style = TextStyle(
+                                    color = Color.White,
                             )
                         },
                         actions = {
