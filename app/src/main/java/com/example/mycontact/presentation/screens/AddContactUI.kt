@@ -76,7 +76,7 @@ fun AddContactUI(modifier: Modifier = Modifier,
             .padding(innerPadding),
 //            .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+            verticalArrangement = Arrangement.Center
 
         ) {
 //            Spacer(modifier=Modifier.height(16.dp))
