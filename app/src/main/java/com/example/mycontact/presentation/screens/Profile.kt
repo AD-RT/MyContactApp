@@ -76,8 +76,8 @@ fun profile(state: AppState,viewModel: ContactViewModel= hiltViewModel(),navCont
                     Spacer(modifier = Modifier.height(50.dp))
                         Card(
                             modifier = Modifier
-                                .width(380.dp)
-                                .height(500.dp),
+                                .width(350.dp)
+                                .height(350.dp),
                             elevation = CardDefaults.cardElevation(
                                 defaultElevation = 10.dp
                             ),
@@ -92,13 +92,7 @@ fun profile(state: AppState,viewModel: ContactViewModel= hiltViewModel(),navCont
                                 verticalArrangement = Arrangement.SpaceEvenly
                             ) {
 
-                            Image(
-                                painter = painterResource(id = R.drawable.ic_launcher_background),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(180.dp)
-                                    .clip(CircleShape)
-                            )
+                            
                                 Column(
                                     modifier = Modifier
                                         .fillMaxWidth()
