@@ -97,6 +97,7 @@ fun HomeScreenUI(
                                 style = TextStyle(
                                     color = Color.White,
                             )
+                            )
                         },
                         actions = {
                             IconButton(onClick = { showMenu = !showMenu }) {
