@@ -90,7 +90,7 @@ fun HomeScreenUI(
                         title = {
 
                             Text(
-                                "Contacts ",
+                                "Contacts",
                                 fontSize = 24.sp,
                                 fontFamily = FontFamily.Serif,
                                 fontWeight = FontWeight.Medium,
