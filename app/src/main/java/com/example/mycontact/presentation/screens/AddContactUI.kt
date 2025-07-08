@@ -55,7 +55,7 @@ fun AddContactUI(modifier: Modifier = Modifier,
 
                  ){
     val viewState by viewModel.state.collectAsState()
-    
+
 
     Scaffold(
         topBar = {
