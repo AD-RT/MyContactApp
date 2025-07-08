@@ -213,7 +213,7 @@ fun ContactItemUI(contact: Contact, viewModel: ContactViewModel, navController: 
                     viewModel.state.value.phoneNumber.value = contact.phoneNumber
                     viewModel.state.value.email.value = contact.email
 
-                    navController.navigate(Routes.AddContactUI){}
+                    navController.navigate(Routes.AddContactUI) {}
                 }
             )
             ,
