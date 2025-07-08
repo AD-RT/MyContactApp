@@ -79,17 +79,36 @@ fun AddContactUI(modifier: Modifier = Modifier,
             verticalArrangement = Arrangement.spacedBy(16.dp),
 
         ) {
-            Spacer(modifier=Modifier.height(16.dp))
+//            Spacer(modifier=Modifier.height(16.dp))
+//           // Display the selected image or a placeholder
+//            val imageUri = viewState.selectedImageUri.value // Access the value from the state
+//            Log.d("AddContactUI", "Current Image URI in UI: $imageUri")
+//
+//            val painter = if (imageUri != null) {
+//                rememberAsyncImagePainter(
+//                    ImageRequest.Builder(LocalContext.current)
+//                        .data(imageUri)
+//                        .crossfade(true)
+//                        .build()
+//                )
+//            } else {
+//                // Use a placeholder image when no image is selected
+//                painterResource(id = R.drawable.u) // Replace with your default image resource
+//            }
+//                Image(
+//                    painter = painter,
+//                    contentDescription = null,
+//                    modifier=modifier
+//                        .size(180.dp)
+//                        .clip(CircleShape)
+//                        .clickable {// Launch the photo picker when the image is clicked
+//                            pickMediaLauncher.launch(
+//                                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+//                            )   },
+//                    contentScale = ContentScale.Crop
+//                )
+//
 
-                Image(
-                    painter = painterResource(id = R.drawable.u),
-                    contentDescription = null,
-                    modifier=modifier
-                        .size(180.dp)
-                        .clip(CircleShape)
-                )
-
-            Spacer(modifier=Modifier.height(16.dp))
 
             DetailsContactUI(placeholder = "Name", valueChange = {state.name.value = it}, label = "Enter Name", value = state.name.value, contentDescription = "Person Icon", Id = R.drawable.baseline_person_24)
             DetailsContactUI(placeholder = "Phone Number", valueChange = {state.phoneNumber.value = it}, label = "Enter Phone Number", value = state.phoneNumber.value, contentDescription = "Phone Icon", Id = R.drawable.baseline_add_call_24)
