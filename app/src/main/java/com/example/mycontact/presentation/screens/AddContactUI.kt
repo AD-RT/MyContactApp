@@ -115,6 +115,8 @@ fun AddContactUI(modifier: Modifier = Modifier,
             DetailsContactUI(placeholder = "Phone Number", valueChange = {state.phoneNumber.value = it}, label = "Enter Phone Number", value = state.phoneNumber.value, contentDescription = "Phone Icon", Id = R.drawable.baseline_add_call_24)
             Spacer(modifier=Modifier.height(16.dp))
             DetailsContactUI(placeholder = "Email", valueChange = {state.email.value = it}, label = "Enter Email", value =state.email.value, contentDescription = "Email Icon", Id = R.drawable.baseline_email_24)
+
+            Spacer(modifier=Modifier.height(16.dp))
             Button(
                 onClick = {
                     OnEvent.invoke()
