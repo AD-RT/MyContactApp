@@ -72,9 +72,9 @@ fun AddContactUI(modifier: Modifier = Modifier,
 
     ){ innerPadding ->
         Column(modifier = modifier
-            .fillMaxHeight()
-            .padding(innerPadding)
-            .verticalScroll(rememberScrollState()),
+            .fillMaxSize()
+            .padding(innerPadding),
+//            .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp),
 
