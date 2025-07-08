@@ -104,6 +104,7 @@ fun HomeScreenUI(
                                 Icon(
                                     painter = painterResource(id = R.drawable.baseline_sort_24),
                                     contentDescription = null,
+                                    tint = Color.White,
                                     modifier = Modifier
                                         .padding(2.dp)
                                         .size(28.dp)
