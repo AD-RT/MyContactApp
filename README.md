@@ -1,7 +1,7 @@
 # MyContactApp
 📱 MyContactApp is a lightweight and user-friendly contact management application built to simplify storing, searching, and managing personal contacts. With a clean UI and fast performance, the app ensures smooth navigation and efficient contact handling, making everyday communication easier.
 
-🔧 Features
+<h2> 🔧 Features </h2>
 
 ➕ Add Contact: Create and save new contacts with essential details.
 
@@ -13,7 +13,7 @@
 
 ❌ Delete Contact: Remove unwanted contacts from the list with a single tap.
 
-UI Showcase – MyContactApp
+<h2>UI Showcase – MyContactApp</h2>
 
 <p float="left">
   <img src="https://github.com/user-attachments/assets/50e709b4-c74f-40d3-9532-95f22089554d" width="200"/>
@@ -25,7 +25,7 @@ UI Showcase – MyContactApp
 </p>
 
 
-💻 Tech Stack
+<h2>💻 Tech Stack</h2>
 
 Language: Kotlin
 
