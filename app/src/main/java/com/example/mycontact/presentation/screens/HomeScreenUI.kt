@@ -204,9 +204,9 @@ fun ContactItemUI(contact: Contact, viewModel: ContactViewModel, navController: 
                     viewModel.state.value.name.value = contact.name
                     viewModel.state.value.phoneNumber.value = contact.phoneNumber
                     viewModel.state.value.email.value = contact.email
-                            navController.navigate(Routes.profile)
-                          },
-                onDoubleClick = {  },
+                    navController.navigate(Routes.profile)
+                },
+                onDoubleClick = { },
                 onLongClick = {                     // storing the contact details in the state so that we can update it
                     viewModel.state.value.id.value = contact.id
                     viewModel.state.value.name.value = contact.name
