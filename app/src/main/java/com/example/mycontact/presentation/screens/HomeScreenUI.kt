@@ -107,7 +107,7 @@ fun HomeScreenUI(
                                     tint = Color.White,
                                     modifier = Modifier
                                         .padding(2.dp)
-                                        .size(28.dp)
+                                        .size(32.dp)
                                 )
                             }
                             DropdownMenu(
