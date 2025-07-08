@@ -52,6 +52,9 @@ fun AddContactUI(modifier: Modifier = Modifier,
                  state : AppState = AppState(),  // we did not make the remember state according to the clean architecture principle so we defined the state in the AppState class
              navController: NavHostController= rememberNavController()
                  ){
+    val viewState by viewModel.state.collectAsState()
+    
+
     Scaffold(
         topBar = {
             TopAppBar(
