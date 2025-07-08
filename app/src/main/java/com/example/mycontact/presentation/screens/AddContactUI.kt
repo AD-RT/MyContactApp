@@ -51,7 +51,8 @@ fun AddContactUI(modifier: Modifier = Modifier,
                  viewModel: ContactViewModel = hiltViewModel(),
                  OnEvent: () -> Unit = {},
                  state : AppState = AppState(),  // we did not make the remember state according to the clean architecture principle so we defined the state in the AppState class
-             navController: NavHostController= rememberNavController()
+                 navController: NavHostController= rememberNavController()
+
                  ){
     val viewState by viewModel.state.collectAsState()
     
